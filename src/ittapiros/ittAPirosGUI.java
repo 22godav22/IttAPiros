@@ -5,6 +5,11 @@
  */
 package ittapiros;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author hallgato
@@ -16,6 +21,12 @@ public class ittAPirosGUI extends javax.swing.JFrame {
      */
     public ittAPirosGUI() {
         initComponents();
+     List<String> holPiros = new ArrayList<>();
+        holPiros.add(0,"üres");
+        holPiros.add(1,"üres");
+        holPiros.add(2,"üres");
+        
+        
     }
 
     /**
@@ -27,9 +38,9 @@ public class ittAPirosGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn3 = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
@@ -39,10 +50,16 @@ public class ittAPirosGUI extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        pohar3 = new javax.swing.JMenuItem();
+        pohar4 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btn3.setEnabled(false);
+
+        btn1.setEnabled(false);
+
+        btn2.setEnabled(false);
 
         jTextField1.setText("??????");
 
@@ -76,11 +93,21 @@ public class ittAPirosGUI extends javax.swing.JFrame {
 
         jMenu2.setText("Játék");
 
-        jMenuItem4.setText("3 pohár");
-        jMenu2.add(jMenuItem4);
+        pohar3.setText("3 pohár");
+        pohar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pohar3ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(pohar3);
 
-        jMenuItem5.setText("4 pohár");
-        jMenu2.add(jMenuItem5);
+        pohar4.setText("4 pohár");
+        pohar4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pohar4ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(pohar4);
 
         jMenuBar1.add(jMenu2);
 
@@ -101,11 +128,11 @@ public class ittAPirosGUI extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(65, 65, 65)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -114,9 +141,9 @@ public class ittAPirosGUI extends javax.swing.JFrame {
                 .addContainerGap(101, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,6 +163,20 @@ public class ittAPirosGUI extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void pohar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohar4ActionPerformed
+        JOptionPane.showMessageDialog(this, "ez a mód jelenleg nem elérhető!");
+    }//GEN-LAST:event_pohar4ActionPerformed
+
+    private void pohar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohar3ActionPerformed
+        JButton b1 = btn1;
+        JButton b2 = btn2;
+        JButton b3 = btn3;
+        b1.setEnabled(true);
+        b2.setEnabled(true);
+        b3.setEnabled(true);
+       
+    }//GEN-LAST:event_pohar3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,9 +214,9 @@ public class ittAPirosGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn2;
+    private javax.swing.JButton btn3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
@@ -184,8 +225,8 @@ public class ittAPirosGUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JMenuItem pohar3;
+    private javax.swing.JMenuItem pohar4;
     // End of variables declaration//GEN-END:variables
 }
