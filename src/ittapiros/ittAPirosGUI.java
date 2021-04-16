@@ -16,17 +16,14 @@ import javax.swing.JOptionPane;
  */
 public class ittAPirosGUI extends javax.swing.JFrame {
 
+    private Iterable<String> holPiros;
+
     /**
      * Creates new form ittAPirosGUI
      */
     public ittAPirosGUI() {
         initComponents();
-     List<String> holPiros = new ArrayList<>();
-        holPiros.add(0,"üres");
-        holPiros.add(1,"üres");
-        holPiros.add(2,"üres");
-        
-        
+
     }
 
     /**
@@ -58,10 +55,20 @@ public class ittAPirosGUI extends javax.swing.JFrame {
         btn3.setEnabled(false);
 
         btn1.setEnabled(false);
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
 
         btn2.setEnabled(false);
 
         jTextField1.setText("??????");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setSelected(true);
         jCheckBox1.setText("maradjon ott a golyó amig ki nem találom");
@@ -167,7 +174,7 @@ public class ittAPirosGUI extends javax.swing.JFrame {
     private void pohar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohar4ActionPerformed
         JOptionPane.showMessageDialog(this, "ez a mód jelenleg nem elérhető!");
     }//GEN-LAST:event_pohar4ActionPerformed
-
+int d;
     private void pohar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pohar3ActionPerformed
         JButton b1 = btn1;
         JButton b2 = btn2;
@@ -175,8 +182,39 @@ public class ittAPirosGUI extends javax.swing.JFrame {
         b1.setEnabled(true);
         b2.setEnabled(true);
         b3.setEnabled(true);
-       
+
+        List<String> holPiros = new ArrayList<>();
+        holPiros.add(0, "üres");
+        holPiros.add(1, "üres");
+        holPiros.add(2, "üres");
+        
+        int min = 0;
+        int max = 2;
+         d = (int) (Math.random() * (max - min + 1) + min);
+        
+        switch (d) {
+            case 0:
+                holPiros.set(d, "piros");
+                break;
+            case 1:
+                holPiros.set(d, "piros");
+                break;
+            case 2:
+                holPiros.set(d, "piros");
+                break;
+        }
+        System.out.println(holPiros.get(0));
+        //   System.out.println(holPiros);
+
     }//GEN-LAST:event_pohar3ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+      
+    }//GEN-LAST:event_btn1ActionPerformed
 
     /**
      * @param args the command line arguments
